@@ -1,0 +1,87 @@
+/* CONTACTO */
+
+.contact-form{
+  width: var(--container);
+  margin: var(--space-2) auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  text-align: left;
+}
+
+/* Campo base */
+.field{ display: flex; flex-direction: column; gap: 6px; }
+.field--full{ grid-column: 1 / -1; }
+.field.checkbox{ flex-direction: row; align-items: center; gap: 10px; }
+
+.hint{
+  font-size: var(--fs-xs);
+  color: #9eeedd;
+  opacity: .85;
+}
+
+
+textarea{ min-height: 160px; }
+
+/* Acciones */
+.actions{
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.btn--ghost{
+  background: transparent;
+  color: var(--c-prim);
+  border-color: var(--c-prim);
+}
+.btn--ghost:hover{
+  background: rgba(0,255,204,.1);
+}
+
+/*formulario */
+.status{
+  grid-column: 1 / -1;
+  margin-top: var(--space-1);
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+.status--ok{
+  background: rgba(0,255,204,.12);
+  border: 2px solid var(--c-prim);
+  color: #e7fffb;
+  box-shadow: var(--glow-prim);
+}
+.status--error{
+  background: rgba(255,102,255,.12);
+  border: 2px solid var(--c-sec);
+  color: #ffd7ff;
+  box-shadow: var(--glow-sec);
+}
+
+/* contacto */
+.contact-info{
+  width: var(--container);
+  margin: var(--space-3) auto 0;
+  text-align: left;
+}
+.contact-info h3{
+  margin-bottom: var(--space-1);
+}
+.contact-info ul{
+  margin: 0; padding-left: 1.1rem;
+}
+.contact-info li{
+  margin-bottom: .4rem;
+  font-size: var(--fs-sm);
+  color: #e7fffb;
+}
+
+/* Responsividad */
+@media (max-width: 820px){
+  .contact-form{ grid-template-columns: 1fr; }
+  .field, .field--full{ grid-column: 1 / -1; }
+}
