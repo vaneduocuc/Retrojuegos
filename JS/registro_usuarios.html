@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro de usuarios | Retrojuegos</title>
+
+  <!-- Tema global -->
+  <link rel="stylesheet" href="../CSS/estilos.css" />
+  <!-- Reutiliza el estilo arcade del login -->
+  <link rel="stylesheet" href="../CSS/registro_usuarios.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-wrap">
+      <img src="../Imagenes/Logo_tienda.png" alt="Logo Retrojuegos" class="logo" />
+    </div>
+  </header>
+
+  <main class="site-main">
+    <h2>Registro de usuarios</h2>
+
+    <form id="register-form" class="card" autocomplete="on" novalidate>
+      <div class="field">
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Mario Bros" required />
+      </div>
+
+      <div class="field">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Ej: Link" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="retrogamer@correo.com" required />
+      </div>
+
+      <div class="field">
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" name="pass" placeholder="Mínimo 6 caracteres" required />
+      </div>
+
+      <div class="field">
+        <label for="pass2">Confirmar contraseña</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Repite tu contraseña" required />
+      </div>
+
+      <div class="field">
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input type="date" id="nacimiento" name="nacimiento" required />
+      </div>
+
+      <div class="field">
+        <label for="pais">País</label>
+        <select id="pais" name="pais" required>
+          <option value="">Selecciona tu país</option>
+          <option>Chile</option><option>Argentina</option><option>México</option>
+          <option>España</option><option>Perú</option><option>Colombia</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="plataforma">Plataforma favorita</label>
+        <select id="plataforma" name="plataforma">
+          <option>NES</option><option>SNES</option><option>Arcade</option>
+          <option>Game Boy</option><option>Genesis</option>
+        </select>
+      </div>
+
+      <div class="field remember-row">
+        <input type="checkbox" id="tyc" required />
+        <label for="tyc">Acepto términos y condiciones</label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">Crear cuenta</button>
+      </div>
+
+      <div id="reg-status" class="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-wrap"><p>© 2025 Retrojuegos</p></div>
+  </footer>
+
+  <script src="registro_usuarios.js"></script>
+</body>
+</html>
