@@ -1,0 +1,102 @@
+
+html, body {
+  height: auto !important;    
+  min-height: 100%;
+}
+body {
+  display: block !important;    
+  align-items: initial !important;
+  justify-content: initial !important;
+}
+
+.site-main {
+  margin-top: var(--space-2);
+  overflow: visible;
+}
+
+
+.grid { overflow: visible; }
+
+
+.grid{
+
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-2);
+  justify-items: center;   
+}
+
+
+.card{
+  width: 100%;
+  max-width: 320px;        
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Imagen principal */
+.card > img{
+  width: 100%;             
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 0 6px rgba(255,102,255,.25), 0 0 8px rgba(0,255,204,.2);
+}
+
+/* Tipos y espaciados */
+.card h3{
+  font-size: var(--fs-sm);
+  margin: 10px 0 4px;
+}
+
+.card .meta{
+  font-size: var(--fs-xs);
+  color: #9eeedd;
+  margin-bottom: 6px;
+}
+
+.card .price{
+  font-size: var(--fs-md);
+  color: var(--c-warn);
+  margin: 6px 0;
+  text-shadow: 0 0 3px var(--c-warn);
+}
+
+.card .desc{
+  font-size: var(--fs-xs);
+  color: #c8fff3;
+  opacity: .95;
+  line-height: 1.4;
+  margin: 6px 0 10px 0;
+}
+
+/* Botón a lo ancho */
+.card .add-to-cart{
+  width: 100%;
+  margin-top: 6px;
+}
+
+
+#cart-count{
+  background:#ff66ff; color:#111; border:2px solid #66ffcc;
+  border-radius:10px; padding:2px 6px; margin-left:6px; font-size:.7rem;
+}
+
+/* Responsividad */
+@media (max-width: 680px){
+  .grid{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .card{ max-width: 300px; }
+}
+
+@media (max-width: 480px){
+  .grid{
+    grid-template-columns: 1fr;   
+  }
+  .card{ max-width: 92vw; }       
+  .card h3{ font-size: calc(var(--fs-sm) - 0.05rem); }
+  .card .desc{ font-size: calc(var(--fs-xs) - 0.02rem); }
+}
+
