@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | Retrojuegos</title>
+
+  <!-- Tema global + estilos de contacto -->
+  <link rel="stylesheet" href="../CSS/estilos.css" />
+  <link rel="stylesheet" href="../CSS/contacto.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-wrap">
+      <img src="../Imagenes/Logo_tienda.png" alt="Logo Retrojuegos" class="logo" />
+    </div>
+  </header>
+
+  <main class="site-main">
+    <h2>Contacto</h2>
+    <p>Escríbenos y te respondemos a la brevedad.</p>
+
+    <!-- Formulario accesible -->
+    <form id="contact-form" class="contact-form" action="mailto:ventas@retrojuegos.cl" method="post" enctype="text/plain" novalidate>
+      <!-- nombre -->
+      <div class="field">
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" name="Nombre" placeholder="Ej: Mario Bros" minlength="6" required />
+      </div>
+
+      <!-- email -->
+      <div class="field">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="Email" placeholder="tucorreo@ejemplo.com" inputmode="email" required />
+      </div>
+
+      <!-- motivo -->
+      <div class="field">
+        <label for="motivo">Motivo de contacto</label>
+        <select id="motivo" name="Motivo" required>
+          <option value="" selected disabled>Selecciona una opción</option>
+          <option>Devoluciones</option>
+          <option>Soporte</option>
+          <option>Consulta general</option>
+        </select>
+      </div>
+
+      <!-- asunto -->
+      <div class="field">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="Asunto" placeholder="Ej: Consulta por stock de Zelda" maxlength="120" required />
+      </div>
+
+      <!-- mensaje -->
+      <div class="field field--full">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="Mensaje" minlength="10" required></textarea>
+      </div>
+
+      <!-- newsletter -->
+      <div class="field checkbox">
+        <input type="checkbox" id="boletin" name="Boletín" value="Sí" />
+        <label for="boletin">Quiero recibir novedades y ofertas</label>
+      </div>
+
+      <!-- acciones -->
+      <div class="actions">
+        <button type="submit" class="btn">Enviar</button>
+        <button type="reset" class="btn btn--ghost">Limpiar</button>
+      </div>
+
+      <!-- mensajes de estado -->
+      <div id="form-status" aria-live="polite" class="status" hidden></div>
+    </form>
+
+    <section class="contact-info">
+      <h3>Otros medios</h3>
+      <ul>
+        <li><strong>Email:</strong> ventas@retrojuegos.cl</li>
+        <li><strong>WhatsApp:</strong> +56 9 1234 5678</li>
+        <li><strong>Horario:</strong> Lun–Vie 10:00–18:00</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-wrap">
+      <p>© 2025 Retrojuegos</p>
+    </div>
+  </footer>
+
+</body>
+</html>
