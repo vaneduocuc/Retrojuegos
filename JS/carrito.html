@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito | Retrojuegos</title>
+  <link rel="stylesheet" href="../CSS/estilos.css" />
+  <link rel="stylesheet" href="../CSS/carrito.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-wrap">
+      <img src="../Imagenes/Logo_tienda.png" alt="Logo Retrojuegos" class="logo" />
+    </div>
+  </header>
+
+  <main class="site-main">
+    <h2>Tu carrito</h2>
+    <section id="lista-carrito" class="grid"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-wrap">
+      <p>© 2025 Retrojuegos</p>
+    </div>
+  </footer>
+
+  <script>
+    const lista = document.getElementById('lista-carrito');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if (carrito.length === 0) {
+      lista.innerHTML = '<p>Tu carrito está vacío.</p>';
+    } else {
+      lista.innerHTML = carrito.map(prod => `
+        <article class="card">
+          <img src="${prod.imagen}" alt="${prod.titulo}">
+          <h3>${prod.titulo}</h3>
+          <p class="price">${prod.precio}</p>
+        </article>
+      `).join('');
+    }
+  </script>
+</body>
+</html>
