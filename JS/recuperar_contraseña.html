@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recuperar contraseña | Retrojuegos</title>
+
+  <!-- Tema global -->
+  <link rel="stylesheet" href="../CSS/estilos.css" />
+  <link rel="stylesheet" href="../CSS/recuperar_contraseña.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-wrap">
+      <img src="../Imagenes/Logo_tienda.png" alt="Logo Retrojuegos" class="logo" />
+    </div>
+  </header>
+
+  <main class="site-main">
+    <h2>Recuperar contraseña</h2>
+
+    <form id="recover-form" action="#" method="post" class="card" novalidate>
+      <div class="field">
+        <label for="correo">Introduce tu correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="retrogamer@tucorreo.cl" required />
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">Ejecutar</button>
+      </div>
+
+      <!-- Mensajes al usuario -->
+      <div id="rec-status" aria-live="polite" class="status"></div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-wrap">
+      <p>© 2025 Retrojuegos</p>
+    </div>
+  </footer>
+
+  <!-- Lógica de recuperación -->
+  <script src="recuperar_contraseña.js"></script>
+</body>
+</html>
