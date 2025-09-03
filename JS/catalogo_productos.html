@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo | Retrojuegos</title>
+
+  <!-- Tema -->
+  <link rel="stylesheet" href="../CSS/estilos.css" />
+  <!-- Ajustes de catálogo -->
+  <link rel="stylesheet" href="../CSS/catalogo.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-wrap">
+      <img src="../Imagenes/Logo_tienda.png" alt="Logo Retrojuegos" class="logo" />
+    </div>
+  </header>
+
+  <main class="site-main">
+    <h2>Catálogo de juegos</h2>
+    <p>Todos nuestros clásicos disponibles.</p>
+
+    <!-- Productos -->
+    <section class="grid">
+      <!-- Mario Bros -->
+      <article class="card" data-id="mario-bros">
+        <img src="../Imagenes/mario.webp" alt="Mario Bros (NES)">
+        <h3>Mario Bros</h3>
+        <p class="meta">NES • Plataformas</p>
+        <p class="price">$ 14.990</p>
+        <p class="desc">Clásico de plataformas con Mario y Luigi, acción arcade y niveles icónicos.</p>
+        <button class="btn add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <!-- Pac-Man -->
+      <article class="card" data-id="pacman">
+        <img src="../Imagenes/pacman.webp" alt="Pac-Man (Arcade)">
+        <h3>Pac-Man</h3>
+        <p class="meta">Arcade • Laberintos</p>
+        <p class="price">$ 19.990</p>
+        <p class="desc">Come puntos y esquiva fantasmas en el laberinto más famoso de los videojuegos.</p>
+        <button class="btn add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <!-- Street Fighter II -->
+      <article class="card" data-id="sf2">
+        <img src="../Imagenes/sf.webp" alt="Street Fighter II (SNES)">
+        <h3>Street Fighter II</h3>
+        <p class="meta">SNES • Peleas</p>
+        <p class="price">$ 12.990</p>
+        <p class="desc">El referente de los juegos de pelea: combos, personajes y pura nostalgia.</p>
+        <button class="btn add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <!-- The Legend of Zelda -->
+      <article class="card" data-id="zelda">
+        <img src="../Imagenes/zelda.jpg" alt="The Legend of Zelda (NES)">
+        <h3>The Legend of Zelda</h3>
+        <p class="meta">NES • Aventura</p>
+        <p class="price">$ 19.990</p>
+        <p class="desc">Explora Hyrule, resuelve mazmorras y reúne piezas de la Trifuerza.</p>
+        <button class="btn add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <!-- Tetris -->
+      <article class="card" data-id="tetris">
+        <img src="../Imagenes/Tetris.webp" alt="Tetris (Game Boy)">
+        <h3>Tetris</h3>
+        <p class="meta">Game Boy • Puzles</p>
+        <p class="price">$ 14.990</p>
+        <p class="desc">Encaja tetrominós. Simple, adictivo y eterno.</p>
+        <button class="btn add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <!-- Space Invaders -->
+      <article class="card" data-id="space-invaders">
+        <img src="../Imagenes/space.jpg" alt="Space Invaders (Arcade)">
+        <h3>Space Invaders</h3>
+        <p class="meta">Arcade • Shooter</p>
+        <p class="price">$ 12.990</p>
+        <p class="desc">Defiende la Tierra del ataque alienígena en este legendario shooter retro.</p>
+        <button class="btn add-to-cart">Agregar al carrito</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-wrap">
+      <p>© 2025 Retrojuegos</p>
+    </div>
+  </footer>
+
+  <script src="../JS/catalogo_productos.js"></script>
+
+</body>
+</html>
+
