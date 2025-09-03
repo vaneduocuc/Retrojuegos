@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iniciar sesión | Retrojuegos</title>
+
+  <!-- Tema global -->
+  <link rel="stylesheet" href="../CSS/estilos.css" />
+  <link rel="stylesheet" href="../CSS/inicio_sesion.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-wrap">
+      <img src="../Imagenes/Logo_tienda.png" alt="Logo Retrojuegos" class="logo" />
+    </div>
+  </header>
+
+  <main class="site-main">
+    <h2>Iniciar sesión</h2>
+
+    <form id="login-form" action="#" method="post" class="card">
+      <div class="field">
+        <label for="usuario">Usuario o correo</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Tu usuario o email" required />
+      </div>
+
+      <div class="field">
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" placeholder="Tu contraseña" required />
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">Ingresar</button>
+      </div>
+
+      <!-- Botón para recuperar contraseña -->
+      <div class="actions">
+        <a href="recuperar_contraseña.html" class="btn secondary">Recuperar contraseña</a>
+      </div>
+
+      <p class="helper">
+        ¿No tienes cuenta? 
+        <a href="registro_usuarios.html" class="btn-link">Regístrate</a>
+      </p>
+
+      <div id="form-status" aria-live="polite" class="status"></div>
+    </form>
+  </main>
+
+  <!-- Enlaza el JS de validación -->
+  <script src="inicio_sesion.js"></script>
+
+  <footer class="site-footer">
+    <div class="container-wrap">
+      <p>© 2025 Retrojuegos</p>
+    </div>
+  </footer>
+</body>
+</html>
+
