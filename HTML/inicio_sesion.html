@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Iniciar sesión | Retrojuegos</title>
 
-  <!-- Tema global -->
+  
   <link rel="stylesheet" href="../CSS/estilos.css" />
   <link rel="stylesheet" href="../CSS/inicio_sesion.css">
 </head>
@@ -30,11 +30,21 @@
         <input type="password" id="clave" name="clave" placeholder="Tu contraseña" required />
       </div>
 
+      
+      <div class="field">
+        <label for="rol">Selecciona tu rol</label>
+        <select id="rol" name="rol" required>
+          <option value="">-- Selecciona un rol --</option>
+          <option value="retrogamer">Retrogamer</option>
+          <option value="admin">Administrador</option>
+        </select>
+      </div>
+
       <div class="actions">
         <button type="submit" class="btn">Ingresar</button>
       </div>
 
-      <!-- Botón para recuperar contraseña -->
+     
       <div class="actions">
         <a href="recuperar_contraseña.html" class="btn secondary">Recuperar contraseña</a>
       </div>
@@ -48,7 +58,6 @@
     </form>
   </main>
 
-  <!-- Enlaza el JS de validación -->
   <script src="inicio_sesion.js"></script>
 
   <footer class="site-footer">
@@ -58,4 +67,5 @@
   </footer>
 </body>
 </html>
+
 

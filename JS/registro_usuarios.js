@@ -1,6 +1,3 @@
-/* ===========================
-   Registro – Validación básica
-   =========================== */
 const $ = (s, c=document) => c.querySelector(s);
 
 const form = $('#register-form');
@@ -19,16 +16,17 @@ function isEmail(v){
 function handleSubmit(e){
   e.preventDefault();
 
-  const nombre = $('#nombre')?.value.trim();
-  const usuario = $('#usuario')?.value.trim();
-  const email = $('#email')?.value.trim();
-  const pass = $('#pass')?.value;
-  const pass2 = $('#pass2')?.value;
-  const nacimiento = $('#nacimiento')?.value;
-  const pais = $('#pais')?.value;
-  const tyc = $('#tyc')?.checked;
+  const nombre      = $('#nombre')?.value.trim();
+  const usuario     = $('#usuario')?.value.trim();
+  const email       = $('#email')?.value.trim();
+  const pass        = $('#pass')?.value;
+  const pass2       = $('#pass2')?.value;
+  const nacimiento  = $('#nacimiento')?.value;
+  const pais        = $('#pais')?.value;
+  const rol         = $('#rol')?.value;          
+  const tyc         = $('#tyc')?.checked;
 
-  // Validaciones simples
+  // Validaciones
   if(!nombre || !usuario || !email || !pass || !pass2 || !nacimiento || !pais){
     showStatus('Completa todos los campos requeridos.', 'error'); return;
   }
@@ -41,11 +39,14 @@ function handleSubmit(e){
   if(pass !== pass2){
     showStatus('Las contraseñas no coinciden.', 'error'); return;
   }
+  if(!rol){
+    showStatus('Debes seleccionar un rol (Retrogamer o Administrador).', 'error'); return;
+  }
   if(!tyc){
     showStatus('Debes aceptar los términos y condiciones.', 'error'); return;
   }
 
-  // Simulación de registro correcto
+  // Registro correcto
   showStatus('¡Cuenta creada con éxito! Redirigiendo al inicio de sesión…', 'ok');
   setTimeout(()=>{ window.location.href = 'inicio_sesion.html'; }, 1200);
 }

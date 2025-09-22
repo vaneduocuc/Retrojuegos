@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Registro de usuarios | Retrojuegos</title>
 
-  <!-- Tema global -->
+
   <link rel="stylesheet" href="../CSS/estilos.css" />
-  <!-- Reutiliza el estilo arcade del login -->
+
   <link rel="stylesheet" href="../CSS/registro_usuarios.css"/>
 </head>
 <body>
@@ -62,10 +62,11 @@
       </div>
 
       <div class="field">
-        <label for="plataforma">Plataforma favorita</label>
-        <select id="plataforma" name="plataforma">
-          <option>NES</option><option>SNES</option><option>Arcade</option>
-          <option>Game Boy</option><option>Genesis</option>
+        <label for="rol">Rol</label>
+        <select id="rol" name="rol" required>
+          <option value="">Selecciona un rol</option>
+          <option value="retrogamer">Retrogamer</option>
+          <option value="admin">Administrador</option>
         </select>
       </div>
 

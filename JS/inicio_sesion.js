@@ -1,24 +1,21 @@
-/* ===========================
-   Validación Login – Retrojuegos
-   =========================== */
-
 const $ = (s, c=document) => c.querySelector(s);
 
-const form    = $('#login-form') || $('form');     // hace fallback si no pusiste id
-const usuario = $('#usuario');
-const clave   = $('#clave');
-const statusB = $('#form-status');
-const toggle  = $('#toggle-pass');
-const remember= $('#remember');
+const form     = $('#login-form') || $('form');
+const usuario  = $('#usuario');
+const clave    = $('#clave');
+const rolSel   = $('#rol');                 
+const statusB  = $('#form-status');
+const toggle   = $('#toggle-pass');
+const remember = $('#remember');
 
-// Usuarios demo (mientras no tengas backend)
+// Usuarios ejemplo
 const DEMO_USERS = [
-  { user: 'admin',  email: 'admin@retrojuegos.cl',  pass: 'retro123' },
-  { user: 'mario',  email: 'mario@nintendo.com',    pass: 'mushroom1' },
-  { user: 'zelda',  email: 'zelda@hyrule.com',      pass: 'triforce1' },
+  { user: 'admin',  email: 'admin@retrojuegos.cl',  pass: 'retro123',   roles: ['admin'] },
+  { user: 'mario',  email: 'mario@nintendo.com',    pass: 'mario123',   roles: ['retrogamer'] },
+  { user: 'zelda',  email: 'zelda@nintendo.com',    pass: 'zelda123',   roles: ['retrogamer'] },
 ];
 
-const USER_KEY = 'retrojuegos_user';  // para guardar sesión
+const USER_KEY = 'retrojuegos_user';  
 
 function showStatus(msg, kind='ok'){
   if(!statusB) return;
@@ -31,8 +28,9 @@ function isEmail(v){
 }
 
 function validateInputs(){
-  const u = (usuario?.value || '').trim();
-  const p = (clave?.value || '').trim();
+  const u   = (usuario?.value || '').trim();
+  const p   = (clave?.value || '').trim();
+  const rol = (rolSel?.value || '').trim();
 
   if(!u){
     showStatus('Ingresa tu usuario o correo.', 'error');
@@ -49,22 +47,27 @@ function validateInputs(){
     clave?.focus();
     return false;
   }
-  return { u, p };
+  if(!rol){
+    showStatus('Selecciona tu rol (Retrogamer o Administrador).', 'error');
+    rolSel?.focus();
+    return false;
+  }
+  return { u, p, rol };
 }
 
 function findUser(ident){
-  // permite iniciar con usuario o email
+ 
   const low = ident.toLowerCase();
   return DEMO_USERS.find(x => x.user.toLowerCase() === low || x.email.toLowerCase() === low);
 }
 
-function saveSession(profile, persist){
+function saveSession(profile, role, persist){
   const payload = JSON.stringify({
     user: profile.user,
     email: profile.email,
+    role: role,
     ts: Date.now()
   });
-  // Si “Recordarme” está marcado → localStorage; si no → sessionStorage
   if(persist) localStorage.setItem(USER_KEY, payload);
   else sessionStorage.setItem(USER_KEY, payload);
 }
@@ -74,7 +77,7 @@ function handleSubmit(e){
 
   const valid = validateInputs();
   if(!valid) return;
-  const { u, p } = valid;
+  const { u, p, rol } = valid;
 
   const found = findUser(u);
   if(!found || found.pass !== p){
@@ -82,11 +85,17 @@ function handleSubmit(e){
     return;
   }
 
-  // Éxito
-  saveSession(found, !!(remember && remember.checked));
-  showStatus(`¡Bienvenido, ${found.user}! Redirigiendo…`, 'ok');
+  // Validar rol 
+  if(!found.roles || !found.roles.includes(rol)){
+    showStatus('El rol seleccionado no está habilitado para este usuario.', 'error');
+    rolSel?.focus();
+    return;
+  }
 
-  // Simular “cargando” y redirigir al home
+  
+  saveSession(found, rol, !!(remember && remember.checked));
+  showStatus(`¡Bienvenido, ${found.user}! Rol: ${rol}. Redirigiendo…`, 'ok');
+
   setTimeout(() => { window.location.href = 'index.html'; }, 900);
 }
 
@@ -97,13 +106,14 @@ function togglePassword(){
   if(toggle) toggle.textContent = isText ? 'Ver' : 'Ocultar';
 }
 
-// Prefill si ya hay sesión guardada (ux)
+
 function hydrateIfRemembered(){
   const saved = localStorage.getItem(USER_KEY) || sessionStorage.getItem(USER_KEY);
   if(!saved) return;
   try{
     const data = JSON.parse(saved);
     if(usuario && data?.email) usuario.value = data.email;
+    if(rolSel && data?.role)   rolSel.value = data.role;
   }catch{}
 }
 

@@ -1,7 +1,7 @@
 /* ============================================
    CARRITO – ARCADE RETRO
    Coherente con estilos.css y catálogo
-   ============================================ */
+   ===================================== */
 
 /* Contenedor principal del carrito */
 .site-main{
@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-/* Título con glow arcade (reutiliza variables globales) */
+
 .site-main h2{
   margin: 0;
   font-size: 1.4rem;
@@ -22,7 +22,7 @@
   animation: titleGlow 2.4s infinite alternate;
 }
 
-/* Grilla de ítems del carrito */
+
 #lista-carrito.grid{
   width: 100%;
   display: grid;
@@ -30,7 +30,7 @@
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-/* Tarjeta de producto */
+
 #lista-carrito .card{
   background: #121212;
   border-radius: var(--radius);
@@ -58,7 +58,7 @@
   box-shadow: 0 0 10px rgba(255,102,255,.6), 0 0 18px rgba(0,255,204,.45);
 }
 
-/* Imagen pequeña tipo thumbnail */
+
 #lista-carrito .card > img{
   grid-area: img;
   width: 88px;
@@ -68,7 +68,7 @@
   box-shadow: 0 0 6px rgba(255,102,255,.25), 0 0 8px rgba(0,255,204,.2);
 }
 
-/* Título y precio */
+
 #lista-carrito .card h3{
   grid-area: title;
   margin: 0;
@@ -85,14 +85,14 @@
   text-shadow: 0 0 3px var(--c-warn);
 }
 
-/* Meta opcional (si la agregas después) */
+
 #lista-carrito .card .meta{
   grid-area: meta;
   font-size: var(--fs-xs);
   color: #9eeedd;
 }
 
-/* Estado vacío */
+
 #lista-carrito p{
   grid-column: 1 / -1;
   margin: 12px 0;
@@ -100,7 +100,7 @@
   font-size: var(--fs-sm);
 }
 
-/* Barra inferior de acciones del carrito (opcional) */
+
 .cart-bar{
   width: 100%;
   display: grid;
@@ -128,7 +128,7 @@
   text-shadow: 0 0 3px var(--c-warn);
 }
 
-/* Botones de acción */
+
 .btn{
   display: inline-block;
   padding: 10px 16px;
@@ -149,7 +149,7 @@
   box-shadow: 0 0 12px rgba(255,102,255,.5), 0 0 18px rgba(0,255,204,.35);
 }
 
-/* Botones secundarios */
+
 .btn.secondary{
   background: transparent;
   color: var(--c-prim);
@@ -161,7 +161,7 @@
   box-shadow: 0 0 12px rgba(0,255,204,.55);
 }
 
-/* Responsivo */
+
 @media (max-width: 520px){
   #lista-carrito .card{
     grid-template-columns: 72px 1fr;
@@ -176,7 +176,7 @@
   .cart-bar .total{ justify-self: center; }
 }
 
-/* Animación del título (por si no está en estilos.css) */
+
 @keyframes titleGlow{
   0%   { text-shadow: 0 0 4px var(--c-sec), 0 0 10px var(--c-prim); }
   100% { text-shadow: 0 0 6px var(--c-warn), 0 0 14px var(--c-sec); }

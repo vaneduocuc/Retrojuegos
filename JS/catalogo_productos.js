@@ -1,7 +1,7 @@
-// Seleccionar todos los botones "Agregar al carrito"
+// botones Agregar al carrito"
 const botonesCarrito = document.querySelectorAll('.add-to-cart');
 
-// Función para agregar producto al carrito y redirigir
+// agregar producto al carrito 
 function agregarAlCarrito(event) {
   const card = event.target.closest('.card');
   const producto = {
@@ -11,18 +11,18 @@ function agregarAlCarrito(event) {
     imagen: card.querySelector('img').src
   };
 
-  // Obtener carrito actual o crear uno vacío
+ 
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   carrito.push(producto);
 
-  // Guardar en localStorage
+ 
   localStorage.setItem('carrito', JSON.stringify(carrito));
 
-  // Redirigir al carrito
+
   window.location.href = 'carrito.html';
 }
 
-// Asignar evento a cada botón
+
 botonesCarrito.forEach(boton => {
   boton.addEventListener('click', agregarAlCarrito);
 });

@@ -1,6 +1,4 @@
-/* ==================================
-   Recuperar contraseña – Lado cliente
-   ================================== */
+
 
 const $ = (s, c=document) => c.querySelector(s);
 
@@ -34,8 +32,8 @@ function handleSubmit(e){
     return;
   }
 
-  // Simulación de envío correcto
-  showStatus('¡Listo! Te enviaremos un enlace a tu correo con las instrucciones para recuperar tu contraseña.', 'ok');
+  // envío correcto
+  showStatus('Te enviaremos un enlace a tu correo con las instrucciones para recuperar tu contraseña.', 'ok');
 
 }
 
